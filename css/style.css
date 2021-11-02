@@ -1,0 +1,129 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size:10px;
+    background: url(../images/background.png) no-repeat;
+    background-size: cover;       /* 调整插入图片大小 */
+
+}
+
+html::before {
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    backdrop-filter: blur(1.3rem); /* 毛玻璃效果（模糊） */
+}
+
+::selection {                     /* 鼠标选中css效果 */
+    color:#f6f6f6;
+    background-color:rgb(144,129,241,85%);
+}
+
+
+.box {
+    display: flex;
+    overflow: hidden;
+    width: 90rem;
+    height: 55rem;
+    background-color:rgb(255,255,255,75%);
+    border-radius:1.5rem;
+    margin:10% auto;
+    box-shadow:0 0 1rem 0.2rem rgb(0 0 0 / 25%);
+}
+
+.box .left {
+    position:relative;
+    width: 35%;
+    height: 100%;
+    background-color: lightblue;   /*在插入图片下放置背景色，以防加载失败的情况*/
+}
+
+.box .left::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background: url(../images/cover2.jpg) no-repeat;
+    background-size:cover;
+    opacity: 0.9;
+}
+
+
+.box .right {
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box .right h4 {
+    color:rgb(144,139,241);
+    font-size:3rem;
+    margin-top:5rem;
+}
+
+.box .right form {   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box .right form .account {
+    outline:none;
+    width:80%;
+    height:5rem;
+    font-size:1.6rem;
+    margin-top:5rem;
+    padding:1rem 0 0 1.8rem;
+    border:none;
+    border-bottom:1px solid rgb(144,129,241);
+    border-radius:1px solid rgb(144,129,241);
+    color:rgb(144,139,241);
+    background-color:rgb(0 0 0 / 0);
+}
+
+.right form .account:focus {
+    outline:none;
+    color:rgb(144,139,241);
+    padding:1rem 0 0 1.8rem;
+}
+
+.right .Login {
+    width:60%;
+    height:5rem;
+    color:#f6f6f6;
+    background: linear-gradient(120deg,#e0c3fc 0% ,#8ec5fc 100%) no-repeat;
+    font-size:1.6rem;
+    border:none;
+    border-radius: 0.6rem;
+    margin:6rem 0 0 50%;
+    transform: translateX(-50%);          /* 调整位置的 */
+}
+.right .Login:hover {
+   box-shadow: 0 0 2rem -0.5rem rgb(0 0 0 / 20%);
+}
+
+.right .fn {
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem;
+    width:70%;
+}
+
+.right .fn a {
+   font-size:1.3rem;
+   margin-top: 5rem;
+   padding:1rem 2rem;
+   color:#666;
+   text-decoration: none;
+}
+
+.right .fn a:hover {
+    color: rgb(144,129,241);
+}
